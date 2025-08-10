@@ -10,8 +10,6 @@ CREATE TABLE Produtos(
 	nome NVARCHAR(200) NOT NULL,
 	categoria NUMERIC(5) NOT NULL,
 );
-
-
 -------
 CREATE TABLE ProdutoCategoria(
 	id_categoria NUMERIC(5) PRIMARY KEY IDENTITY,
@@ -20,8 +18,8 @@ CREATE TABLE ProdutoCategoria(
 -------
 CREATE TABLE ProdutoEstoque(
 	id_produto_estoque NUMERIC(5) PRIMARY KEY IDENTITY,
-	quantidade NUMERIC(5),
-	produto NUMERIC(5)
+	quantidade NUMERIC(5) NOT NULL,
+	produto NUMERIC(5) NOT NULL
 );
 
 --------
