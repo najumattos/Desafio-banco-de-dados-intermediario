@@ -57,4 +57,4 @@ Saldo por Produto
 |15 unidades de Blusa|
 
 ## Uso de Inteligência Artificial
-Este assistente interativo foi utilizado para aprimorar o entendimento dos comandos SQL, fornecer dicas de boas práticas de programação e refinar a estrutura deste README.
+A Inteligência Artificial foi usada como assistente interativo para aprimorar o entendimento dos comandos SQL, fornecer dicas de boas práticas de programação e refinar a estrutura deste README.
