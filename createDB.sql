@@ -33,13 +33,12 @@ CREATE TABLE Clientes(
 GO
 -------------FIM-TABELAS--------------------------
 
-
 -----------FKS------------
 ALTER TABLE ProdutoEstoque 
-				ADD CONSTRAINT fk_produto_estoque FOREIGN KEY (produto) REFERENCES Produtos (id_produto)
+		ADD CONSTRAINT fk_produto_estoque FOREIGN KEY (produto) REFERENCES Produtos (id_produto)
 ---------
 ALTER TABLE Produtos 
-				ADD CONSTRAINT fk_produto_categoria FOREIGN KEY (categoria) REFERENCES ProdutoCategoria (id_categoria)
+		ADD CONSTRAINT fk_produto_categoria FOREIGN KEY (categoria) REFERENCES ProdutoCategoria (id_categoria)
 GO
 -----------FIM-FKS-------------
 

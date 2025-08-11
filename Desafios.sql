@@ -11,16 +11,19 @@ FROM Produtos P
 GO
 
 -- 2. Excluir Todos os itens da Categoria Roupas(1)
-SELECT P.nome, P.categoria, E.quantidade  FROM Produtos P
-INNER JOIN ProdutoEstoque E ON E.id_produto_estoque = P.id_produto
-WHERE  P.categoria = 1;		
-		--da conflito com a tabela ProdutoEstoque pois estão relacionadas
-		--apagar nos dois lugares de forma individual??
 
-DELETE FROM Produtos --e também ProdutoEstoque
-WHERE categoria = 1;
+--Excluir Produtos da categoria "ROUPAS"(1) da tabela ProdutoEstoque
+DELETE FROM ProdutoEstoque
+WHERE produto IN (
+	SELECT *
+	FROM Produtos
+	WHERE categoria = 1
 
-
+)
+--Excluir Produtos da categoria "ROUPAS"
+DELETE FROM ProdutoCategoria 
+WHERE  categoria = 1;		
+SELECT * FROM Produtos	
 -- 3. TABELA CLIENTES: Concatenar titulo + primeiroNome, segundoNome, sobrenome
 SELECT titulo		 AS Título,
 	   primeiro_nome AS 'Primeiro Nome',
