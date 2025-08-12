@@ -5,25 +5,25 @@ GO
 SELECT  C.categoria  AS Categoria,
 		P.nome		 AS Produto,
 		E.quantidade AS Saldo
-FROM Produtos P
-	INNER JOIN ProdutoCategoria C ON C.id_categoria = P.categoria
-	INNER JOIN ProdutoEstoque E ON E.id_produto_estoque = P.id_produto;
+FROM dbo.Produtos P
+	INNER JOIN dbo.ProdutoCategoria C ON C.id_categoria = P.categoria
+	INNER JOIN dbo.ProdutoEstoque E ON E.id_produto_estoque = P.id_produto;
 GO
 
 -- 2. Excluir Todos os itens da Categoria Roupas(1)
 
 --Excluir Produtos da categoria "ROUPAS"(1) da tabela ProdutoEstoque
-DELETE FROM ProdutoEstoque
+DELETE FROM dbo.ProdutoEstoque
 WHERE produto IN (
-	SELECT *
-	FROM Produtos
+	SELECT id_produto
+	FROM dbo.Produtos
 	WHERE categoria = 1
-
 )
 --Excluir Produtos da categoria "ROUPAS"
-DELETE FROM ProdutoCategoria 
+DELETE FROM dbo.Produtos
 WHERE  categoria = 1;		
-SELECT * FROM Produtos	
+
+
 -- 3. TABELA CLIENTES: Concatenar titulo + primeiroNome, segundoNome, sobrenome
 SELECT titulo		 AS Título,
 	   primeiro_nome AS 'Primeiro Nome',
@@ -38,6 +38,4 @@ SELECT titulo		 AS Título,
 
 		ELSE CONCAT(titulo, ' ', primeiro_nome, ' ', segundo_nome, ' ', sobrenome) 
 	END AS 'Nome Completo'
-	FROM Clientes
-
-
+	FROM dbo.Clientes

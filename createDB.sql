@@ -150,3 +150,7 @@ VALUES (2, 17); --2 Naninhas
 INSERT INTO ProdutoEstoque  (quantidade, produto)
 VALUES (0, 18); --0 Colchões
 --------------FIM-ESTOQUE-------------------------------
+
+select * from dbo.Produtos
+select * from dbo.ProdutoCategoria
+select * from dbo.ProdutoEstoque
